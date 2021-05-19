@@ -1,0 +1,220 @@
+{
+    "_id": "3574854d-21ec-4003-8101-b4925b800f26",
+    "_updatedDate": "2021-01-07T19:24:22.659Z",
+    "cartId": "61f3a159-dc16-4f10-b7a4-3101b5e310d4",
+    "channelInfo": {
+        "type": "WEB"
+    },
+    "enteredBy": {
+        "id": "380f25bc-5d20-4dce-9227-07a656ac1b8e",
+        "identityType": "CONTACT"
+    },
+    "refunds": [],
+    "billingInfo": {
+        "address": {
+            "formatted": "אצ\"ל 15, קרקע\nראשון לציון, 7570607\nIsrael\n0526471881",
+            "city": "ראשון לציון",
+            "country": "ISR",
+            "addressLine": "אצ\"ל 15",
+            "addressLine2": "קרקע",
+            "postalCode": "7570607",
+            "streetAddress": {
+                "number": "15",
+                "name": "אצ\"ל"
+            }
+        },
+        "firstName": "יוסי ברקוביץ",
+        "lastName": "ריהוטים",
+        "email": "yeelaberkowicz@gmail.com",
+        "phone": "0526471881",
+        "externalTransactionId": "TRAN1610-047460MZ-3TOSPXHI-LXOVN9MC",
+        "paidDate": "2021-01-07T19:24:22.359Z",
+        "paymentMethod": "Isracard",
+        "paymentGatewayTransactionId": "743c034f-19b5-48ca-964c-aa2478ecb6c2",
+        "paymentProviderTransactionId": "TRAN1610-047460MZ-3TOSPXHI-LXOVN9MC"
+    },
+    "buyerInfo": {
+        "id": "380f25bc-5d20-4dce-9227-07a656ac1b8e",
+        "type": "CONTACT",
+        "identityType": "CONTACT",
+        "firstName": "יוסי ברקוביץ",
+        "lastName": "ריהוטים",
+        "phone": "0526471881",
+        "email": "yeelaberkowicz@gmail.com"
+    },
+    "_dateCreated": "2021-01-07T19:24:17.697Z",
+    "currency": "ILS",
+    "fulfillmentStatus": "NOT_FULFILLED",
+    "archived": false,
+    "activities": [
+        {
+            "type": "ORDER_PLACED",
+            "timestamp": "2021-01-07T19:24:17.697Z"
+        },
+        {
+            "type": "ORDER_PAID",
+            "timestamp": "2021-01-07T19:24:22.359Z"
+        }
+    ],
+    "number": 12269,
+    "paymentStatus": "PAID",
+    "shippingInfo": {
+        "deliveryOption": "שליח עד הבית",
+        "estimatedDeliveryTime": "בין 3-5 ימי עסקים",
+        "shippingRegion": "Domestic",
+        "shipmentDetails": {
+            "address": {
+                "formatted": "אייזק שטרן 9, 7/17\nתל אביב יפו, 6323707\nIsrael\n0526471881",
+                "city": "תל אביב יפו",
+                "country": "ISR",
+                "addressLine": "אייזק שטרן 9",
+                "addressLine2": "7/17",
+                "postalCode": "6323707",
+                "streetAddress": {
+                    "number": "9",
+                    "name": "אייזק שטרן"
+                }
+            },
+            "firstName": "יעלה",
+            "lastName": "ברקוביץ",
+            "email": "yeelaberkowicz@gmail.com",
+            "phone": "0526471881",
+            "tax": 0,
+            "discount": 0,
+            "priceData": {
+                "price": 0,
+                "taxIncludedInPrice": true
+            }
+        },
+        "pickupDetails": null
+    },
+    "lineItems": [
+        {
+            "index": 1,
+            "quantity": 1,
+            "price": 599.2,
+            "name": "סט מצעים סאטן 500 - Cream",
+            "translatedName": "סט מצעים סאטן 500 - Cream",
+            "productId": "cd998c53-a597-7bb0-2cde-3e345c0a9c99",
+            "totalPrice": 599.2,
+            "lineItemType": "PHYSICAL",
+            "options": [
+                {
+                    "option": "סדין",
+                    "selection": "160X200"
+                },
+                {
+                    "option": "ציפה",
+                    "selection": "200x220"
+                },
+                {
+                    "option": "זוג ציפיות",
+                    "selection": "50X70"
+                }
+            ],
+            "customTextFields": [],
+            "mediaItem": {
+                "id": "ebff75_2f1e867838cb4385bafd79b273f0e240~mv2.jpg",
+                "src": "wix:image://v1/ebff75_2f1e867838cb4385bafd79b273f0e240~mv2.jpg/file.jpg#originWidth=1000&originHeight=1000",
+                "type": "IMAGE"
+            },
+            "sku": "50044,50048,50039",
+            "variantId": "00000000-0000-0b86-0005-ae2ba248f3bb",
+            "discount": 0,
+            "tax": 0,
+            "taxIncludedInPrice": true,
+            "priceData": {
+                "price": 599.2,
+                "totalPrice": 599.2,
+                "taxIncludedInPrice": true
+            },
+            "refundedQuantity": 0,
+            "weight": 0
+        },
+        {
+            "index": 2,
+            "quantity": 1,
+            "price": 72,
+            "name": "מגבת רחצה באריגת פיקה - ירוק",
+            "translatedName": "מגבת רחצה באריגת פיקה - ירוק",
+            "productId": "a66f2370-cc44-0cde-ca4c-fc8414141111",
+            "totalPrice": 72,
+            "lineItemType": "PHYSICAL",
+            "options": [
+                {
+                    "option": "מידה",
+                    "selection": "70X140"
+                }
+            ],
+            "customTextFields": [],
+            "mediaItem": {
+                "id": "ebff75_50074d8461f8495d8eba602ac25779c6~mv2.jpg",
+                "src": "wix:image://v1/ebff75_50074d8461f8495d8eba602ac25779c6~mv2.jpg/file.jpg#originWidth=1000&originHeight=1000",
+                "type": "IMAGE"
+            },
+            "sku": "90084",
+            "variantId": "c22d90c3-7478-4d0f-b7e1-72c1a895a864",
+            "discount": 0,
+            "tax": 0,
+            "taxIncludedInPrice": true,
+            "priceData": {
+                "price": 72,
+                "totalPrice": 72,
+                "taxIncludedInPrice": true
+            },
+            "refundedQuantity": 0,
+            "weight": 0
+        },
+        {
+            "index": 3,
+            "quantity": 1,
+            "price": 72,
+            "name": "מגבת רחצה באריגת פיקה - ורוד",
+            "translatedName": "מגבת רחצה באריגת פיקה - ורוד",
+            "productId": "efc52fa8-ef1a-c172-76ba-9763f07fc93d",
+            "totalPrice": 72,
+            "lineItemType": "PHYSICAL",
+            "options": [
+                {
+                    "option": "מידה",
+                    "selection": "70X140"
+                }
+            ],
+            "customTextFields": [],
+            "mediaItem": {
+                "id": "ebff75_d37af01e599a40fdbb6d83f6dc687817~mv2.jpg",
+                "src": "wix:image://v1/ebff75_d37af01e599a40fdbb6d83f6dc687817~mv2.jpg/file.jpg#originWidth=1000&originHeight=1000",
+                "type": "IMAGE"
+            },
+            "sku": "90082",
+            "variantId": "155ba778-50cd-435d-b4d0-429037e7f518",
+            "discount": 0,
+            "tax": 0,
+            "taxIncludedInPrice": true,
+            "priceData": {
+                "price": 72,
+                "totalPrice": 72,
+                "taxIncludedInPrice": true
+            },
+            "refundedQuantity": 0,
+            "weight": 0
+        }
+    ],
+    "totals": {
+        "discount": 0,
+        "quantity": 3,
+        "shipping": 0,
+        "subtotal": 743.2,
+        "tax": 0,
+        "total": 743.2,
+        "weight": 0
+    },
+    "weightUnit": "KG",
+    "customField": {
+        "value": "022938484",
+        "title": "ת\"ז",
+        "translatedTitle": "ת\"ז"
+    },
+    "fulfillments": [],
+    "discount": null
+}

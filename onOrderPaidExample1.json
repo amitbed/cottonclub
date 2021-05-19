@@ -1,0 +1,256 @@
+[
+    {
+        "_id": "827575b7-95b0-4126-b39e-5cdba9289083",
+        "_updatedDate": "2021-01-06T20:08:20.151Z",
+        "cartId": "3f67568b-4b41-4937-8fc0-d86e1d779b42",
+        "channelInfo": {
+            "type": "WEB"
+        },
+        "enteredBy": {
+            "id": "2f99bda9-ad66-462b-913b-f12294c98c06",
+            "identityType": "CONTACT"
+        },
+        "refunds": [],
+        "billingInfo": {
+            "address": {
+                "formatted": "נחליאלי 20 הוד השרון 20, נחליאלי 20 הוד השרון\nהוד השרון, 4535520\nIsrael\n0545503216",
+                "city": "הוד השרון",
+                "country": "ISR",
+                "addressLine": "נחליאלי 20 הוד השרון 20",
+                "addressLine2": "נחליאלי 20 הוד השרון",
+                "postalCode": "4535520",
+                "streetAddress": {
+                    "number": "20",
+                    "name": "נחליאלי 20 הוד השרון"
+                }
+            },
+            "firstName": "אורנה",
+            "lastName": "מרמרלי",
+            "email": "or_mar@walla.co.il",
+            "phone": "0545503216",
+            "externalTransactionId": "TRAN1609-963697DP-9YPL5BPU-TVLNZIGW",
+            "paidDate": "2021-01-06T20:08:19.506Z",
+            "paymentMethod": "Isracard",
+            "paymentGatewayTransactionId": "dca1157b-6b0f-49ae-af73-54a8f41e666f",
+            "paymentProviderTransactionId": "TRAN1609-963697DP-9YPL5BPU-TVLNZIGW"
+        },
+        "buyerInfo": {
+            "id": "2f99bda9-ad66-462b-913b-f12294c98c06",
+            "type": "CONTACT",
+            "identityType": "CONTACT",
+            "firstName": "אורנה",
+            "lastName": "מרמרלי",
+            "phone": "0545503216",
+            "email": "or_mar@walla.co.il"
+        },
+        "_dateCreated": "2021-01-06T20:08:14.629Z",
+        "currency": "ILS",
+        "fulfillmentStatus": "NOT_FULFILLED",
+        "archived": false,
+        "activities": [
+            {
+                "type": "ORDER_PLACED",
+                "timestamp": "2021-01-06T20:08:14.629Z"
+            },
+            {
+                "type": "ORDER_PAID",
+                "timestamp": "2021-01-06T20:08:19.506Z"
+            }
+        ],
+        "number": 12247,
+        "paymentStatus": "PAID",
+        "shippingInfo": {
+            "deliveryOption": "שליח עד הבית",
+            "estimatedDeliveryTime": "בין 3-5 ימי עסקים",
+            "shippingRegion": "Domestic",
+            "shipmentDetails": {
+                "address": {
+                    "formatted": "נחליאלי 20 הוד השרון 20, נחליאלי 20 הוד השרון\nהוד השרון, 4535520\nIsrael\n0545503216",
+                    "city": "הוד השרון",
+                    "country": "ISR",
+                    "addressLine": "נחליאלי 20 הוד השרון 20",
+                    "addressLine2": "נחליאלי 20 הוד השרון",
+                    "postalCode": "4535520",
+                    "streetAddress": {
+                        "number": "20",
+                        "name": "נחליאלי 20 הוד השרון"
+                    }
+                },
+                "firstName": "אורנה",
+                "lastName": "מרמרלי",
+                "email": "or_mar@walla.co.il",
+                "phone": "0545503216",
+                "tax": 0,
+                "discount": 0,
+                "priceData": {
+                    "price": 0,
+                    "taxIncludedInPrice": true
+                }
+            },
+            "pickupDetails": null
+        },
+        "lineItems": [
+            {
+                "index": 1,
+                "quantity": 2,
+                "price": 101.5,
+                "name": "סדין סאטן 300 - לבן",
+                "translatedName": "סדין סאטן 300 - לבן",
+                "productId": "a103bddb-cd69-e09a-acd0-7aeef0866d91",
+                "totalPrice": 203,
+                "lineItemType": "PHYSICAL",
+                "options": [
+                    {
+                        "option": "מידה",
+                        "selection": "120X200"
+                    }
+                ],
+                "customTextFields": [],
+                "mediaItem": {
+                    "id": "ebff75_45ba3a02be7e484ea2252413b9d253d3~mv2.jpg",
+                    "src": "wix:image://v1/ebff75_45ba3a02be7e484ea2252413b9d253d3~mv2.jpg/file.jpg#originWidth=1000&originHeight=1000",
+                    "type": "IMAGE"
+                },
+                "sku": "50236",
+                "variantId": "00000000-0000-0002-0005-a2364087ab47",
+                "discount": 0,
+                "tax": 0,
+                "taxIncludedInPrice": true,
+                "priceData": {
+                    "price": 101.5,
+                    "totalPrice": 203,
+                    "taxIncludedInPrice": true
+                },
+                "refundedQuantity": 0,
+                "weight": 0
+            },
+            {
+                "index": 2,
+                "quantity": 2,
+                "price": 170,
+                "name": "ציפיות סאטן פארטו",
+                "translatedName": "ציפיות סאטן פארטו",
+                "productId": "c337d68c-d207-1a44-c779-7839ced72c10",
+                "totalPrice": 340,
+                "lineItemType": "PHYSICAL",
+                "options": [
+                    {
+                        "option": "צבע",
+                        "selection": "זהב"
+                    }
+                ],
+                "customTextFields": [],
+                "mediaItem": {
+                    "id": "5b5cb3_0cadff43f0f94382bc6c8ec13e997ace~mv2.jpg",
+                    "src": "wix:image://v1/5b5cb3_0cadff43f0f94382bc6c8ec13e997ace~mv2.jpg/file.jpg#originWidth=5507&originHeight=3671",
+                    "type": "IMAGE"
+                },
+                "sku": "50253",
+                "variantId": "00000000-0000-0002-0005-a235f08b07c2",
+                "discount": 0,
+                "tax": 0,
+                "taxIncludedInPrice": true,
+                "priceData": {
+                    "price": 170,
+                    "totalPrice": 340,
+                    "taxIncludedInPrice": true
+                },
+                "refundedQuantity": 0,
+                "weight": 0
+            },
+            {
+                "index": 3,
+                "quantity": 2,
+                "price": 87,
+                "name": "מצעי פארטו - זהב",
+                "translatedName": "מצעי פארטו - זהב",
+                "productId": "942a292a-e520-1e02-b103-c09af1c80535",
+                "totalPrice": 174,
+                "lineItemType": "PHYSICAL",
+                "options": [
+                    {
+                        "option": "סדין",
+                        "selection": "120X200"
+                    },
+                    {
+                        "option": "מארז",
+                        "selection": "ללא"
+                    }
+                ],
+                "customTextFields": [],
+                "mediaItem": {
+                    "id": "5b5cb3_0cadff43f0f94382bc6c8ec13e997ace~mv2.jpg",
+                    "src": "wix:image://v1/5b5cb3_0cadff43f0f94382bc6c8ec13e997ace~mv2.jpg/file.jpg#originWidth=5507&originHeight=3671",
+                    "type": "IMAGE"
+                },
+                "sku": "50236",
+                "variantId": "3cb07b05-9c67-4fa8-935b-b27a819f1065",
+                "discount": 0,
+                "tax": 0,
+                "taxIncludedInPrice": true,
+                "priceData": {
+                    "price": 87,
+                    "totalPrice": 174,
+                    "taxIncludedInPrice": true
+                },
+                "refundedQuantity": 0,
+                "weight": 0
+            },
+            {
+                "index": 4,
+                "quantity": 1,
+                "price": 180,
+                "name": "חלוק רחצה קטיפה למבוגרים",
+                "translatedName": "חלוק רחצה קטיפה למבוגרים",
+                "productId": "e3d11e7c-b054-e80b-18ea-49bf895f30f5",
+                "totalPrice": 180,
+                "lineItemType": "PHYSICAL",
+                "options": [
+                    {
+                        "option": "צבע",
+                        "selection": "אפור"
+                    },
+                    {
+                        "option": "מידה",
+                        "selection": "M"
+                    }
+                ],
+                "customTextFields": [],
+                "mediaItem": {
+                    "id": "ebff75_702d3022f76144a3a58aba13ea78beaf~mv2.jpg",
+                    "src": "wix:image://v1/ebff75_702d3022f76144a3a58aba13ea78beaf~mv2.jpg/file.jpg#originWidth=1000&originHeight=1000",
+                    "type": "IMAGE"
+                },
+                "sku": "90015",
+                "variantId": "00000000-0000-0021-0005-a0e184febcb0",
+                "discount": 0,
+                "tax": 0,
+                "taxIncludedInPrice": true,
+                "priceData": {
+                    "price": 180,
+                    "totalPrice": 180,
+                    "taxIncludedInPrice": true
+                },
+                "refundedQuantity": 0,
+                "weight": 0
+            }
+        ],
+        "totals": {
+            "discount": 0,
+            "quantity": 7,
+            "shipping": 0,
+            "subtotal": 897,
+            "tax": 0,
+            "total": 897,
+            "weight": 0
+        },
+        "weightUnit": "KG",
+        "customField": {
+            "value": "054870621",
+            "title": "ת\"ז",
+            "translatedTitle": "ת\"ז"
+        },
+        "fulfillments": [],
+        "discount": null
+    }
+]

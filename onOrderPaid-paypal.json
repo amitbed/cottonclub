@@ -1,0 +1,141 @@
+{
+    "_id": "c6cfd374-8c49-441f-8ec1-7baf9f0611a7",
+    "_updatedDate": "2021-01-09T15:16:53.607Z",
+    "cartId": "ec61c554-d81c-4c1d-80ae-1b6a0f53b507",
+    "channelInfo": {
+        "type": "WEB"
+    },
+    "enteredBy": {
+        "id": "a7f56eca-0d88-4c1a-b43d-b0559ce8a3bf",
+        "identityType": "CONTACT"
+    },
+    "refunds": [],
+    "billingInfo": {
+        "address": {
+            "formatted": "Haim Weizmann Street 33, 14\nRehovot , 7628215\nIsrael\n972525010103",
+            "city": "Rehovot ",
+            "country": "ISR",
+            "addressLine": "Haim Weizmann Street 33",
+            "addressLine2": "14",
+            "postalCode": "7628215"
+        },
+        "firstName": "Lynn",
+        "lastName": "Toledo",
+        "email": "lynn.toledo22@gmail.com",
+        "phone": "972525010103",
+        "externalTransactionId": "2EN64611BB5848123",
+        "paidDate": "2021-01-09T15:16:53.340Z",
+        "paymentMethod": "PayPal",
+        "paymentGatewayTransactionId": "9ff5c218-c2b5-404f-be05-5ae5c19ed66e",
+        "paymentProviderTransactionId": "2EN64611BB5848123"
+    },
+    "buyerInfo": {
+        "id": "a7f56eca-0d88-4c1a-b43d-b0559ce8a3bf",
+        "type": "CONTACT",
+        "identityType": "CONTACT",
+        "firstName": "Lynn",
+        "lastName": "Toledo",
+        "phone": "972525010103",
+        "email": "lynn.toledo22@gmail.com"
+    },
+    "_dateCreated": "2021-01-09T15:16:49.957Z",
+    "currency": "ILS",
+    "fulfillmentStatus": "NOT_FULFILLED",
+    "archived": false,
+    "activities": [
+        {
+            "type": "ORDER_PLACED",
+            "timestamp": "2021-01-09T15:16:49.957Z"
+        },
+        {
+            "type": "ORDER_PAID",
+            "timestamp": "2021-01-09T15:16:53.340Z"
+        }
+    ],
+    "number": 12305,
+    "paymentStatus": "PAID",
+    "shippingInfo": {
+        "deliveryOption": "שליח עד הבית",
+        "estimatedDeliveryTime": "בין 3-5 ימי עסקים",
+        "shippingRegion": "Domestic",
+        "shipmentDetails": {
+            "address": {
+                "formatted": "Haim Weizmann Street 33, 14\nRehovot , 7628215\nIsrael\n972525010103",
+                "city": "Rehovot ",
+                "country": "ISR",
+                "addressLine": "Haim Weizmann Street 33",
+                "addressLine2": "14",
+                "postalCode": "7628215"
+            },
+            "firstName": "Lynn",
+            "lastName": "Toledo",
+            "email": "lynn.toledo22@gmail.com",
+            "phone": "972525010103",
+            "tax": 0,
+            "discount": 0,
+            "priceData": {
+                "price": 30,
+                "taxIncludedInPrice": true
+            }
+        },
+        "pickupDetails": null
+    },
+    "lineItems": [
+        {
+            "index": 1,
+            "quantity": 1,
+            "price": 321,
+            "name": "סדרת מצעי סאטן תחרה - פס אחד",
+            "translatedName": "סדרת מצעי סאטן תחרה - פס אחד",
+            "productId": "3814556e-399c-64ba-9c61-e257c582e7ce",
+            "totalPrice": 321,
+            "lineItemType": "PHYSICAL",
+            "options": [
+                {
+                    "option": "מארז- ציפה+ציפיות",
+                    "selection": "200X220 זוגי- ציפה+ציפיות"
+                },
+                {
+                    "option": "סדין",
+                    "selection": "180X200"
+                }
+            ],
+            "customTextFields": [],
+            "mediaItem": {
+                "id": "ebff75_c74367462ad841bb9ebe651b092cd18d~mv2.jpg",
+                "src": "wix:image://v1/ebff75_c74367462ad841bb9ebe651b092cd18d~mv2.jpg/file.jpg#originWidth=1000&originHeight=1000",
+                "type": "IMAGE"
+            },
+            "sku": "50239,50312",
+            "variantId": "00000000-0000-0063-0005-a1894cd3e561",
+            "discount": 32.1,
+            "tax": 0,
+            "taxIncludedInPrice": true,
+            "priceData": {
+                "price": 321,
+                "totalPrice": 321,
+                "taxIncludedInPrice": true
+            },
+            "refundedQuantity": 0,
+            "weight": 0
+        }
+    ],
+    "totals": {
+        "discount": 32.1,
+        "quantity": 1,
+        "shipping": 30,
+        "subtotal": 321,
+        "tax": 0,
+        "total": 318.9,
+        "weight": 0
+    },
+    "weightUnit": "KG",
+    "fulfillments": [],
+    "discount": {
+        "appliedCoupon": {
+            "couponId": "389fe856-496f-4603-b0e0-b8c73fc3fc43",
+            "name": "קנייה ראשונה 10%",
+            "code": "A2H4G5"
+        }
+    }
+}

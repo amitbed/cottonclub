@@ -1,0 +1,55 @@
+{
+    "CUSTNAME": "11111",
+    "CDES": "אורנה מרמרלי",
+    "PAYDATE": "2021-01-06T20:08:20.151Z",
+    "DETAILS": "12247",
+    "CUSTPERSONNEL_SUBFORM": [
+        {
+            "NAME": "אורנה מרמרלי",
+            "CELLPHONE": "0545503216",
+            "EMAIL": "or_mar@walla.co.il"
+        }
+    ],
+    "SHIPTO2_SUBFORM": {
+        "STATE": "הוד השרון",
+        "ADDRESS": "נחליאלי 20 הוד השרון",
+        "ADDRESS2": "20",
+        "ADDRESS3": ""
+    },
+    "EPAYMENT2_SUBFORM": [
+        {
+            "PAYMENTCODE": 16,
+            "PAYACCOUNT": "3426",
+            "VALIDMONTH": "12/20",
+            "IDNUM": "123456789",
+            "QPRICE": 20,
+            "CONFNUM": "1234567"
+        }
+    ],
+    "EINVOICEITEMS_SUBFORM": [
+        {
+            "PARTNAME": "50236",
+            "TQUANT": 2,
+            "VPRICE": 101.5,
+            "TOTPRICE": 203
+        },
+        {
+            "PARTNAME": "50253",
+            "TQUANT": 2,
+            "VPRICE": 170,
+            "TOTPRICE": 340
+        },
+        {
+            "PARTNAME": "50236",
+            "TQUANT": 2,
+            "VPRICE": 87,
+            "TOTPRICE": 174
+        },
+        {
+            "PARTNAME": "90015",
+            "TQUANT": 1,
+            "VPRICE": 180,
+            "TOTPRICE": 180
+        }
+    ]
+}

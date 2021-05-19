@@ -1,0 +1,131 @@
+[
+    {
+        "_id": "785e36f9-2387-4b14-9a1d-24572e2b7245",
+        "_updatedDate": "2021-01-06T21:46:21.774Z",
+        "cartId": "689aed8d-f689-4ee5-87ab-53a72d167f5f",
+        "channelInfo": {
+            "type": "WEB"
+        },
+        "enteredBy": {
+            "id": "b80d78ad-b262-40e7-b86b-d65b2bc72649",
+            "identityType": "CONTACT"
+        },
+        "refunds": [],
+        "billingInfo": {
+            "address": {
+                "formatted": "שם רחוב 11, 2/1\nTel Aviv, 12345\nIsrael\n0547605944",
+                "city": "Tel Aviv",
+                "country": "ISR",
+                "addressLine": "שם רחוב 11",
+                "addressLine2": "2/1",
+                "postalCode": "12345",
+                "streetAddress": {
+                    "number": "11",
+                    "name": "שם רחוב"
+                }
+            },
+            "firstName": "Amit",
+            "lastName": "Bedarshi",
+            "email": "amitbedarshi@gmail.com",
+            "phone": "0547605944",
+            "externalTransactionId": "TRAN1609-969578XT-GGMQDCTQ-CAE4NZ6W",
+            "paidDate": "2021-01-06T21:46:21.650Z",
+            "paymentMethod": "Isracard",
+            "paymentGatewayTransactionId": "327922cc-1577-4d88-ac0f-14fc6b81960a",
+            "paymentProviderTransactionId": "TRAN1609-969578XT-GGMQDCTQ-CAE4NZ6W"
+        },
+        "buyerInfo": {
+            "id": "b80d78ad-b262-40e7-b86b-d65b2bc72649",
+            "type": "CONTACT",
+            "identityType": "CONTACT",
+            "firstName": "Amit",
+            "lastName": "Bedarshi",
+            "phone": "0547605944",
+            "email": "amitbedarshi@gmail.com"
+        },
+        "_dateCreated": "2021-01-06T21:46:15.722Z",
+        "currency": "ILS",
+        "fulfillmentStatus": "NOT_FULFILLED",
+        "archived": false,
+        "activities": [
+            {
+                "type": "ORDER_PLACED",
+                "timestamp": "2021-01-06T21:46:15.722Z"
+            },
+            {
+                "type": "ORDER_PAID",
+                "timestamp": "2021-01-06T21:46:21.650Z"
+            }
+        ],
+        "number": 12248,
+        "paymentStatus": "PAID",
+        "shippingInfo": {
+            "deliveryOption": "איסוף עצמי מחנות המפעל",
+            "shippingRegion": "Domestic",
+            "shipmentDetails": null,
+            "pickupDetails": {
+                "pickupInstructions": "לאחר שקיבלת מאיתנו אישור במייל/מסרון כי החבילה מוכנה עבורך, ניתן להגיע לחנות המפעל שלנו.\nחנות מפעל מועדון הכותנה, ביתן מס' 5, אזה\"ת יצחקי - קיבוץ משמרות.\nשעות פתיחה: \nימים ראשון-חמישי: 10:00-16:00\n\nמייל - info@cottonclub.co.il\nטלפון - 04-6334331",
+                "pickupAddress": {
+                    "formatted": "חנות המפעל מועדון הכותנה, ביתן מס' 5, אזה\"ת יצחקי - קיבוץ משמרות\nקיבוץ משמרות, 3784000",
+                    "city": "קיבוץ משמרות",
+                    "country": "ISR",
+                    "addressLine": "חנות המפעל מועדון הכותנה, ביתן מס' 5, אזה\"ת יצחקי - קיבוץ משמרות",
+                    "postalCode": "3784000",
+                    "subdivision": ""
+                },
+                "firstName": "Amit",
+                "lastName": "Bedarshi",
+                "email": "amitbedarshi@gmail.com",
+                "phone": "0547605944"
+            }
+        },
+        "lineItems": [
+            {
+                "index": 1,
+                "quantity": 1,
+                "price": 118.3,
+                "name": "תחתיות שיש",
+                "translatedName": "תחתיות שיש",
+                "productId": "7f6a0bfd-34bd-2787-a349-494082175093",
+                "totalPrice": 118.3,
+                "lineItemType": "PHYSICAL",
+                "options": [],
+                "customTextFields": [],
+                "mediaItem": {
+                    "id": "5b5cb3_f3ee3c9516f9448d9c73320ee4b3fc7a~mv2.jpg",
+                    "src": "wix:image://v1/5b5cb3_f3ee3c9516f9448d9c73320ee4b3fc7a~mv2.jpg/file.jpg#originWidth=3096&originHeight=3096",
+                    "type": "IMAGE"
+                },
+                "sku": "95038",
+                "variantId": "00000000-0000-0000-0000-000000000000",
+                "discount": 0,
+                "tax": 0,
+                "taxIncludedInPrice": true,
+                "priceData": {
+                    "price": 118.3,
+                    "totalPrice": 118.3,
+                    "taxIncludedInPrice": true
+                },
+                "refundedQuantity": 0,
+                "weight": 0
+            }
+        ],
+        "totals": {
+            "discount": 0,
+            "quantity": 1,
+            "shipping": 0,
+            "subtotal": 118.3,
+            "tax": 0,
+            "total": 118.3,
+            "weight": 0
+        },
+        "weightUnit": "KG",
+        "customField": {
+            "value": "322232322",
+            "title": "ת\"ז",
+            "translatedTitle": "ת\"ז"
+        },
+        "fulfillments": [],
+        "discount": null
+    }
+]
