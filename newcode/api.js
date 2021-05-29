@@ -3,7 +3,7 @@
 const fetch = require('node-fetch');
 const utils = require('./utils');
 
-const env = 'pilot7';
+const env = 'pilot8';
 
 async function getFromPriority(url) {
     const response = await fetch(encodeURI(url), {
@@ -90,8 +90,6 @@ module.exports = {
     addInvoice: async function(body) {
         const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/TINVOICES`;
         const response = await postToPriority(url, body);
-        console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$');
-        console.log(response);
         return response["IVNUM"];
 
     },
@@ -117,6 +115,16 @@ module.exports = {
             "DEBIT": "D",
             "ZTAD_CLOSE_AND_SEND": "Y"
         });
+        return;
+    },
+
+    updateOrderId: async function(orderId, orderStatus) {
+        const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/ORDERS`;
+        await patchToProirity(url,
+            {
+                "ORDNAME": orderId,
+                "ORDSTATUSDES": orderStatus
+            });
         return;
     }
 

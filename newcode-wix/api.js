@@ -2,7 +2,7 @@
 import { fetch } from 'wix-fetch';
 import { sendEmail } from 'backend/utils.js';
 
-const env = 'pilot7';
+const env = 'pilot8';
 
 async function getFromPriority(url) {
     const response = await fetch(encodeURI(url), {
@@ -111,5 +111,16 @@ export async function updateInvoice(invoiceId) {
         "DEBIT": "D",
         "ZTAD_CLOSE_AND_SEND": "Y"
     });
+    return;
+}
+
+
+export async function updateOrderId(orderId, orderStatus) {
+    const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/ORDERS`;
+    await patchToProirity(url,
+        {
+            "ORDNAME": orderId,
+            "ORDSTATUSDES": orderStatus
+        });
     return;
 }

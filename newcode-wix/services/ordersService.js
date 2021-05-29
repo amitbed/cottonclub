@@ -13,7 +13,7 @@ export async function createBodyForOrders(event, customerId, contactId) {
         "CUSTNAME": customerId,
         "CDES": fullName,
         "DETAILS": event.number.toString(),
-        "ORDSTATUSDES": await getOrderStatus(),
+        // "ORDSTATUSDES": await getOrderStatus(),
         "PHONE": contactId,
     };
     if (city){ //Orders can be pickup from the store - in this case there will be no shipTo values
