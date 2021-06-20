@@ -1,5 +1,5 @@
 // This module initiate process and holds all wix events
-import { getCustomerId, addOrder, addInvoice, updateInvoice } from 'backend/api.js';
+import { getCustomerId, addOrder, addInvoice, updateInvoice, getOrderStatus } from 'backend/api.js';
 import { createBodyForOrders } from 'backend/services/ordersService.js';
 import { createOrGetContact } from 'backend/services/contactsService.js';
 import { createBodyForInvoices } from 'backend/services/invoicesService.js';
@@ -51,9 +51,9 @@ async function onOrderPaidAction(event) {
         invoicesBody = await createBodyForInvoices(event, custId, contactId);
         // both requests will run simultanously
         orderId = await addOrder(ordersBody);
-        updateOrderId(orderId, ordersBody.ORDSTATUSDES);
+        await updateOrderId(orderId, await getOrderStatus());
         invoiceId = await addInvoice(invoicesBody);
-        updateInvoice(invoiceId);
+        await updateInvoice(invoiceId);
         sendEmail('New process succeeded', JSON.stringify({
             "contactId": contactId,
             "name": fullName,

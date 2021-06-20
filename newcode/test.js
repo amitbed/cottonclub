@@ -22,11 +22,11 @@ async function onOrderPaid(event) {
         // both requests will run simultanously
         const orderId = await api.addOrder(ordersBody);
         console.log('New order sent to priority. order ID: '+ orderId);
-        api.updateOrderId(orderId, ordersBody.ORDSTATUSDES);
+        await api.updateOrderId(orderId, await api.getOrderStatus());
         console.log('Order status updated');
         const invoiceId = await api.addInvoice(invoicesBody);
         console.log('New invoice sent to priority: '+ invoiceId);
-        api.updateInvoice(invoiceId);
+        await api.updateInvoice(invoiceId);
         console.log('Invoice updated');
         console.log('Done.');
         console.log(JSON.stringify({

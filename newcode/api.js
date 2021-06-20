@@ -84,6 +84,9 @@ module.exports = {
     getOrderStatus: async function() {
         const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/ORDSTATUS?$filter=ZTAD_ORDSTATUS_WS eq 'Y'`;
         const res = await getFromPriority(url);
+        if (!res.value || res.value.length <= 0){
+            return Promise.reject('No order status with flag ZTAD_ORDSTATUS_WS found');
+        }
         return res.value[0].ORDSTATUSDES;
     },
 

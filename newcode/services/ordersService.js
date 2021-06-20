@@ -15,7 +15,7 @@ module.exports = {
             "CDES": fullName,
             "DETAILS": event.number.toString(),
             // "ORDSTATUSDES": await api.getOrderStatus(), //INITSTATFLAG eq 'Y'
-            "PHONE": contactId,
+            "PHONE": contactId
         };
         if (city){ //Orders can be pickup from the store - in this case there will be no shipTo values
             body["SHIPTO2_SUBFORM"] = {

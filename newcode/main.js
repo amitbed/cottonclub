@@ -51,9 +51,9 @@ async function onOrderPaidAction(event) {
         invoicesBody = await invoicesService.createBodyForInvoices(event, custId, contactId);
         // both requests will run simultanously
         orderId = await api.addOrder(ordersBody);
-        api.updateOrderId(orderId, ordersBody.ORDSTATUSDES);
+        await api.updateOrderId(orderId, await api.getOrderStatus());
         invoiceId = await api.addInvoice(invoicesBody);
-        api.updateInvoice(invoiceId);
+        await api.updateInvoice(invoiceId);
         sendEmail('New process succeeded', JSON.stringify({
             "contactId": contactId, 
             "name": fullName,
