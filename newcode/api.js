@@ -73,11 +73,18 @@ module.exports = {
     },
 
     getContactId: async function (fullName, email) {
-        const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}' and NAME eq '${fullName}'`;
+        // const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}' and NAME eq '${fullName}'`;
+        const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}'`;
         const res = await getFromPriority(url);
         if (!res.value || typeof(res.value) !== 'object'){
             return Promise.reject('Error trying to get contact ID');
         }
+        if (res.value.length  === 0){
+            return null;
+        }
+        // Get the record with the field NAME that is equal to fullName.
+        // workaround to a problem filtering names with " ' "
+        res.value = res.value.filter(rec => rec["NAME"] === fullName); 
         return res.value.length > 0 ? res.value[0]["PHONE"] : null;
     },
     
