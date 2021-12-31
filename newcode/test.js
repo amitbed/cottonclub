@@ -10,7 +10,8 @@ async function onOrderPaid(event) {
     try {
         const custId = await api.getCustomerId();
         console.log('Got customer ID: '+ custId);
-        const fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
+        let fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
+        fullName = fullName.trim();
         console.log('contact name is: ' + fullName);
         const contactId = await contactsService.createOrGetContact(custId, fullName, event.buyerInfo.email, event.buyerInfo.phone);
         console.log('Got contact ID: ' + contactId);

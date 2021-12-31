@@ -3,8 +3,7 @@
 const api = require("../api");
 
 module.exports = {
-    createBodyForOrders: async function(event, customerId, contactId) {
-        const fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
+    createBodyForOrders: async function(event, customerId, contactId, fullName) {
         const shipmentDetails = event.shippingInfo.shipmentDetails;
         const city = shipmentDetails ? shipmentDetails.address.city : '';
         const streetName = shipmentDetails ? (shipmentDetails.address.streetAddress ? shipmentDetails.address.streetAddress.name : shipmentDetails.address.addressLine) : '';
@@ -15,10 +14,12 @@ module.exports = {
             "CDES": fullName,
             "DETAILS": event.number.toString(),
             // "ORDSTATUSDES": await api.getOrderStatus(), //INITSTATFLAG eq 'Y'
-            "PHONE": contactId
+            "TYPECODE": await api.getOrderType(),
+            "PHONE": contactId,
+            "DISTRLINECODE": "10"
         };
         if (city){ //Orders can be pickup from the store - in this case there will be no shipTo values
-            body["SHIPTO2_SUBFORM"] = {
+            body["SHIPTO2_SUBFORM"] = { 
                 "STATE": city,
                 "ADDRESS": streetName,
                 "ADDRESS2": streetNumber,

@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const utils = require('./utils');
 
 const env = 'pilot8';
+const serverURL = 'https://cottonclub.medatech-cloud.com/';
 
 async function getFromPriority(url) {
     const response = await fetch(encodeURI(url), {
@@ -67,14 +68,14 @@ async function patchToProirity(url, body) {
 module.exports = {
     getCustomerId: async function() {
         // const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/CUSTOMERS?$filter=ZTAD_WS_CUST eq 'Y'`;
-        const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/CUSTOMERS?$filter=ZTAD_WS_CUST eq 'Y'`;
+        const url = `${serverURL}/odata/priority/tabula.ini/${env}/CUSTOMERS?$filter=ZTAD_WS_CUST eq 'Y'`;
         const res = await getFromPriority(url);
         return res.value[0].CUSTNAME;
     },
 
     getContactId: async function (fullName, email) {
         // const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}' and NAME eq '${fullName}'`;
-        const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}'`;
+        const url = `${serverURL}/odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}'`;
         const res = await getFromPriority(url);
         if (!res.value || typeof(res.value) !== 'object'){
             return Promise.reject('Error trying to get contact ID');
@@ -89,7 +90,7 @@ module.exports = {
     },
     
     getOrderStatus: async function() {
-        const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/ORDSTATUS?$filter=ZTAD_ORDSTATUS_WS eq 'Y'`;
+        const url = `${serverURL}/odata/priority/tabula.ini/${env}/ORDSTATUS?$filter=ZTAD_ORDSTATUS_WS eq 'Y'`;
         const res = await getFromPriority(url);
         if (!res.value || res.value.length <= 0){
             return Promise.reject('No order status with flag ZTAD_ORDSTATUS_WS found');
@@ -97,27 +98,36 @@ module.exports = {
         return res.value[0].ORDSTATUSDES;
     },
 
+    getOrderType: async function() {
+        const url = `${serverURL}/odata/priority/tabula.ini/${env}/CPROFTYPES?$filter=ZTAD_WESITE eq 'Y'`;;
+        const res = await getFromPriority(url);
+        if (!res.value || res.value.length <= 0){
+            return Promise.reject('No order type with flag ZTAD_WESITE found');
+        }
+        return res.value[0].TYPECODE;
+    },
+
     addInvoice: async function(body) {
-        const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/TINVOICES`;
+        const url = `${serverURL}/odata/Priority/tabula.ini/${env}/TINVOICES`;
         const response = await postToPriority(url, body);
         return response["IVNUM"];
 
     },
 
     addOrder: async function(body) {
-        const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/ORDERS`;
+        const url = `${serverURL}/odata/Priority/tabula.ini/${env}/ORDERS`;
         const response = await postToPriority(url, body);
         return response["ORDNAME"];
     },
 
     createContact: async function(body) {
-        const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK`;
+        const url = `${serverURL}/odata/priority/tabula.ini/${env}/PHONEBOOK`;
         const response = await postToPriority(url, body);
         return response["PHONE"];
     },
 
     updateInvoice: async function(invoiceId) {
-        const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/TINVOICES`;
+        const url = `${serverURL}/odata/Priority/tabula.ini/${env}/TINVOICES`;
         await patchToProirity(url, 
         {
             "IVNUM": invoiceId,
@@ -129,7 +139,7 @@ module.exports = {
     },
 
     updateOrderId: async function(orderId, orderStatus) {
-        const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/ORDERS`;
+        const url = `${serverURL}/odata/Priority/tabula.ini/${env}/ORDERS`;
         await patchToProirity(url,
             {
                 "ORDNAME": orderId,

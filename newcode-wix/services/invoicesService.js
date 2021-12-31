@@ -11,9 +11,7 @@ function getPriorityPaymentCode(paymentType){
     }
 }
 
-export async function createBodyForInvoices(event, customerId, contactId) {
-    const fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
-
+export async function createBodyForInvoices(event, customerId, contactId, fullName) {
     const body = {
         "CUSTNAME": customerId,
         "CDES": fullName,

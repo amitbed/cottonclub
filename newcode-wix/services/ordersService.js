@@ -1,9 +1,8 @@
 // This module is responsible for business logic
 import wixStores from 'wix-stores-backend';
-import { getOrderStatus } from 'backend/api.js';
+import { getOrderType } from 'backend/api.js';
 
-export async function createBodyForOrders(event, customerId, contactId) {
-    const fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
+export async function createBodyForOrders(event, customerId, contactId, fullName) {
     const shipmentDetails = event.shippingInfo.shipmentDetails;
     const city = shipmentDetails ? shipmentDetails.address.city : '';
     const streetName = shipmentDetails ? (shipmentDetails.address.streetAddress ? shipmentDetails.address.streetAddress.name : shipmentDetails.address.addressLine) : '';
@@ -14,7 +13,9 @@ export async function createBodyForOrders(event, customerId, contactId) {
         "CDES": fullName,
         "DETAILS": event.number.toString(),
         // "ORDSTATUSDES": await getOrderStatus(),
-        "PHONE": contactId
+        "TYPECODE": await getOrderType(),
+        "PHONE": contactId,
+        "DISTRLINECODE": "10"
     };
     if (city){ //Orders can be pickup from the store - in this case there will be no shipTo values
         body["SHIPTO2_SUBFORM"] = {

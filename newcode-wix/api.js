@@ -2,7 +2,8 @@
 import { fetch } from 'wix-fetch';
 import { sendEmail } from 'backend/utils.js';
 
-const env = 'pilot8';
+const env = 'pilot7';
+const serverURL = 'https://cottonclub-test.medatech-cloud.com/';
 
 async function getFromPriority(url) {
     const response = await fetch(encodeURI(url), {
@@ -64,14 +65,14 @@ async function patchToProirity(url, body) {
 }
 
 export async function getCustomerId() {
-    const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/CUSTOMERS?$filter=ZTAD_WS_CUST eq 'Y'`;
+    const url = `${serverURL}/odata/priority/tabula.ini/${env}/CUSTOMERS?$filter=ZTAD_WS_CUST eq 'Y'`;
     const res = await getFromPriority(url);
     return res.value[0].CUSTNAME;
 }
 
 export async function getContactId(fullName, email) {
     // const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}' and NAME eq '${fullName}'`;
-    const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}'`;
+    const url = `${serverURL}/odata/priority/tabula.ini/${env}/PHONEBOOK?$filter=FIRM eq '${email}'`;
     const res = await getFromPriority(url);
     if (!res.value || typeof(res.value) !== 'object'){
         return Promise.reject('Error trying to get contact ID');
@@ -86,34 +87,42 @@ export async function getContactId(fullName, email) {
 }
 
 export async function getOrderStatus() {
-    const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/ORDSTATUS?$filter=ZTAD_ORDSTATUS_WS eq 'Y'`;
+    const url = `${serverURL}/odata/priority/tabula.ini/${env}/ORDSTATUS?$filter=ZTAD_ORDSTATUS_WS eq 'Y'`;
     const res = await getFromPriority(url);
     if (!res.value || res.value.length <= 0){
         return Promise.reject('No order status with flag ZTAD_ORDSTATUS_WS found');
     }
     return res.value[0].ORDSTATUSDES;
 }
+export async function getOrderType() {
+    const url = `${serverURL}/odata/priority/tabula.ini/${env}/CPROFTYPES?$filter=ZTAD_WESITE eq 'Y'`;;
+    const res = await getFromPriority(url);
+    if (!res.value || res.value.length <= 0){
+        return Promise.reject('No order type with flag ZTAD_WESITE found');
+    }
+    return res.value[0].TYPECODE;
+}
 
 export async function addInvoice(body) {
-    const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/TINVOICES`;
+    const url = `${serverURL}/odata/Priority/tabula.ini/${env}/TINVOICES`;
     const response = await postToPriority(url, body);
     return response["IVNUM"];
 }
 
 export async function addOrder(body) {
-    const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/ORDERS`;
+    const url = `${serverURL}/odata/Priority/tabula.ini/${env}/ORDERS`;
     const response = await postToPriority(url, body);
     return response["ORDNAME"];
 }
 
 export async function createContact(body) {
-    const url = `https://cottonclub.medatech-cloud.com//odata/priority/tabula.ini/${env}/PHONEBOOK`;
+    const url = `${serverURL}/odata/priority/tabula.ini/${env}/PHONEBOOK`;
     const response = await postToPriority(url, body);
     return response["PHONE"];
 }
 
 export async function updateInvoice(invoiceId) {
-    const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/TINVOICES`;
+    const url = `${serverURL}/odata/Priority/tabula.ini/${env}/TINVOICES`;
     await patchToProirity(url, 
     {
         "IVNUM": invoiceId,
@@ -126,7 +135,7 @@ export async function updateInvoice(invoiceId) {
 
 
 export async function updateOrderId(orderId, orderStatus) {
-    const url = `https://cottonclub.medatech-cloud.com//odata/Priority/tabula.ini/${env}/ORDERS`;
+    const url = `${serverURL}/odata/Priority/tabula.ini/${env}/ORDERS`;
     await patchToProirity(url,
         {
             "ORDNAME": orderId,

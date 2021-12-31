@@ -42,13 +42,14 @@ export async function wixStores_onOrderPaid(event) {
 }
 
 async function onOrderPaidAction(event) {
-    const fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
+    let fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
+    fullName = fullName.trim();
     let contactId, orderId, invoiceId, ordersBody, invoicesBody = '';
     try {
         const custId = await getCustomerId();
         contactId = await createOrGetContact(custId, fullName, event.buyerInfo.email, event.buyerInfo.phone);
-        ordersBody = await createBodyForOrders(event, custId, contactId);
-        invoicesBody = await createBodyForInvoices(event, custId, contactId);
+        ordersBody = await createBodyForOrders(event, custId, contactId, fullName);
+        invoicesBody = await createBodyForInvoices(event, custId, contactId, fullName);
         // both requests will run simultanously
         orderId = await addOrder(ordersBody);
         await updateOrderId(orderId, await getOrderStatus());
