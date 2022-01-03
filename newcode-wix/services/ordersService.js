@@ -25,6 +25,11 @@ export async function createBodyForOrders(event, customerId, contactId, fullName
             "ADDRESS3": appartmentNumber
         };
     }
+    if (event.buyerNote) {
+        body["ORDERSTEXT_SUBFORM"] = { 
+            "TEXT": event.buyerNote.replace(/\n/g, '<br>')
+        };
+    }
     const orderItems = await addOrderItems(event.lineItems, event.totals, (shipmentDetails == null), event._updatedDate);
     return { ...body, ...orderItems };
 }
