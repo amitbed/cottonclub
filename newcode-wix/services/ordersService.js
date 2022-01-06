@@ -50,8 +50,8 @@ async function addOrderItems(items, totals, isPickup, duedate) {
     if (totals.discount){
         items_subform.push({
             "PARTNAME": DISCOUNT_SKU,
-            "TQUANT": -1,
-            "VPRICE": totals.discount,
+            "TQUANT": 1,
+            "VPRICE": (-1) * totals.discount,
             "DUEDATE": duedate
         });
     }
