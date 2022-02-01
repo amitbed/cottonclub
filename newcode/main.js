@@ -44,7 +44,7 @@ export async function wixStores_onOrderPaid(event) {
 async function onOrderPaidAction(event) {
     let fullName = `${event.buyerInfo.firstName} ${event.buyerInfo.lastName}`;
     fullName = fullName.trim();
-    let contactId, orderId, invoiceId, ordersBody, invoicesBody = '';
+    let contactId = '', orderId = '', invoiceId = '', ordersBody = '', invoicesBody = '';
     try {
         const custId = await api.getCustomerId();
         contactId = await contactsService.createOrGetContact(custId, fullName, event.buyerInfo.email, event.buyerInfo.phone);
@@ -62,7 +62,8 @@ async function onOrderPaidAction(event) {
             "orderId": orderId,
             "invoiceId": invoiceId,
             "ordersBody": ordersBody,
-            "invoiceBody": invoicesBody
+            "invoiceBody": invoicesBody,
+            "wixEvent": event
         }));
     } catch (err) {
         sendEmail('New process Failed', JSON.stringify({

@@ -3,7 +3,7 @@ import wixStores from 'wix-stores-backend';
 import { getOrderType } from 'backend/api.js';
 
 export async function createBodyForOrders(event, customerId, contactId, fullName) {
-    const shipmentDetails = event.shippingInfo.shipmentDetails;
+    const shipmentDetails = event.shippingInfo && event.shippingInfo.shipmentDetails;
     const city = shipmentDetails ? shipmentDetails.address.city : '';
     const streetName = shipmentDetails ? (shipmentDetails.address.streetAddress ? shipmentDetails.address.streetAddress.name : shipmentDetails.address.addressLine) : '';
     const streetNumber = shipmentDetails ? (shipmentDetails.address.streetAddress ? shipmentDetails.address.streetAddress.number : '') : '';
@@ -30,14 +30,25 @@ export async function createBodyForOrders(event, customerId, contactId, fullName
             "TEXT": event.buyerNote.replace(/\n/g, '<br>')
         };
     }
-    const orderItems = await addOrderItems(event.lineItems, event.totals, (shipmentDetails == null), event._updatedDate);
+    const orderItems = await addOrderItems(event.lineItems, event.totals, isPickup(shipmentDetails, event.lineItems), event._updatedDate);
     return { ...body, ...orderItems };
+}
+
+function isPickup(shipmentDetails, items) {
+    return (
+        !(items.length === 1 && isGiftCard(items[0]) 
+        && !shipmentDetails));
+}
+
+function isGiftCard(item) {
+    return item && (item.productId === 'b9614d17-6b6a-4a55-9cae-cf7a25b2968f');
 }
 
 const DISCOUNT_SKU = "59998";
 const SHIPMENT_SKU = "59999";
 const REFUND_SKU = "59996";
 const PICKUP_SKU = "59994";
+const GIFTCARD_SKU = "59988";
 
 async function addOrderItems(items, totals, isPickup, duedate) {
     if (!items || items.length === 0) {
@@ -74,6 +85,14 @@ async function addOrderItems(items, totals, isPickup, duedate) {
 }
 
 async function toPriorityItemsArr(item, duedate){
+    if (isGiftCard(item)) {
+        return [{
+            "PARTNAME": GIFTCARD_SKU,
+            "TQUANT": item.quantity,
+            "VPRICE": item.price,
+            "DUEDATE": duedate
+        }];
+    }
     if (item.sku.indexOf(',') < 0){ // item has single SKU
         return [{
             "PARTNAME": item.sku,
