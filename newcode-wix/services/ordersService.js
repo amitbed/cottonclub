@@ -36,8 +36,8 @@ export async function createBodyForOrders(event, customerId, contactId, fullName
 
 function isPickup(shipmentDetails, items) {
     return (
-        !(items.length === 1 && isGiftCard(items[0]) 
-        && !shipmentDetails));
+        !(items.length === 1 && isGiftCard(items[0])) &&
+        !shipmentDetails);
 }
 
 function isGiftCard(item) {
