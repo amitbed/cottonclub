@@ -14,6 +14,7 @@ export async function createBodyForOrders(event, customerId, contactId, fullName
         "DETAILS": event.number.toString(),
         // "ORDSTATUSDES": await getOrderStatus(),
         "TYPECODE": await getOrderType(),
+        "NAME" : fullName,
         "PHONE": contactId,
         "DISTRLINECODE": "10"
     };

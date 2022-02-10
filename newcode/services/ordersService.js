@@ -15,6 +15,7 @@ module.exports = {
             "DETAILS": event.number.toString(),
             // "ORDSTATUSDES": await api.getOrderStatus(), //INITSTATFLAG eq 'Y'
             "TYPECODE": await api.getOrderType(),
+            "NAME" : fullName,
             "PHONE": contactId,
             "DISTRLINECODE": "10"
         };

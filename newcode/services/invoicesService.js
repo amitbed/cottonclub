@@ -19,6 +19,7 @@ module.exports = {
             "CUSTNAME": customerId,
             "CDES": fullName,
             "DETAILS": event.number.toString(),
+            "NAME" : fullName,
             "PHONE": contactId,
             "TPAYMENT2_SUBFORM": [{
                 "PAYMENTCODE": getPriorityPaymentCode(event.billingInfo.paymentMethod),
