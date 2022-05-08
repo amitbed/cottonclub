@@ -27,7 +27,7 @@ export async function createBodyForOrders(event, customerId, contactId, fullName
         };
     }
     if (event.buyerNote) {
-        body["ORDERSTEXT_SUBFORM"] = { 
+        body["INTERNALDIALOGTEXT_SUBFORM"] = { 
             "TEXT": event.buyerNote.replace(/\n/g, '<br>')
         };
     }
