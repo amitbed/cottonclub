@@ -3,7 +3,7 @@ const api = require("../api");
 
 function getPriorityPaymentCode(paymentType){
     paymentType = paymentType ? paymentType.toLowerCase() : '';
-    switch (paymentType.toLowerCase()){
+    switch (paymentType){
         case 'paypal':
             return "15"
         case 'visa':
