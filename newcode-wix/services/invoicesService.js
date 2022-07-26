@@ -1,5 +1,6 @@
 // This module is responsible for business logic
 function getPriorityPaymentCode(paymentType){
+    paymentType = paymentType ? paymentType.toLowerCase() : '';
     switch (paymentType.toLowerCase()){
         case 'paypal':
             return "15"

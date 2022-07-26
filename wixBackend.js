@@ -99,6 +99,7 @@ async function addItemsSubForm(items, totals, isPickup) {
 }
 
 function getPriorityPaymentCode(paymentType){
+    paymentType = paymentType ? paymentType.toLowerCase() : '';
     switch (paymentType.toLowerCase()){
         case 'paypal':
             return "15"
