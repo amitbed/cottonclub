@@ -45,6 +45,10 @@ function isGiftCard(item) {
     return item && (item.productId === 'b9614d17-6b6a-4a55-9cae-cf7a25b2968f');
 }
 
+function isTuBeAvPackage(item) {
+    return item && (item.productId === '7dc582de-5eef-b777-a9fb-a8109ace1fa1');
+}
+
 const DISCOUNT_SKU = "59998";
 const SHIPMENT_SKU = "59999";
 const REFUND_SKU = "59996";
@@ -86,6 +90,9 @@ async function addOrderItems(items, totals, isPickup, duedate) {
 }
 
 async function toPriorityItemsArr(item, duedate){
+    if (isTuBeAvPackage(item)) {
+        return handleTuBeAvPackage(item, duedate);
+    }
     if (isGiftCard(item)) {
         return [{
             "PARTNAME": GIFTCARD_SKU,
@@ -143,4 +150,24 @@ function getPrice(itemName, prodVars, sku){
         return Promise.reject('Too many variants found for sku '+ sku + ' item: '+ itemName);
     }
     return variant[0].variant.discountedPrice == null ? variant[0].variant.price: variant[0].variant.discountedPrice;    
+}
+
+function handleTuBeAvPackage(item, duedate) {
+    const possibleOptions = {
+        "50830": 75,
+        "50001": 99,
+        "50823": 99,
+        "50462": 170,
+        "97151": 120,
+        "97152": 120,
+        "59995": 28
+    };
+    let skuArr = item.sku.split(',');
+    skuArr = skuArr.map(sku => sku.trim());
+    return skuArr.map(sku => ({
+        "PARTNAME": sku,
+        "TQUANT": 1,
+        "VPRICE": possibleOptions[sku],
+        "DUEDATE": duedate
+    }));
 }
