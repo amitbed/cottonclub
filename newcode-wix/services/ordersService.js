@@ -154,13 +154,13 @@ function getPrice(itemName, prodVars, sku){
 
 function handleTuBeAvPackage(item, duedate) {
     const possibleOptions = {
-        "50830": 75,
-        "50001": 99,
-        "50823": 99,
-        "50462": 170,
-        "97151": 120,
-        "97152": 120,
-        "59995": 28
+        "50830": 57.75,
+        "50001": 76.23,
+        "50823": 76.23,
+        "50462": 130.9,
+        "97151": 92.4,
+        "97152": 92.4,
+        "59995": 21.56
     };
     let skuArr = item.sku.split(',');
     skuArr = skuArr.map(sku => sku.trim());
