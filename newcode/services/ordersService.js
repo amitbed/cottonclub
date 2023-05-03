@@ -48,7 +48,8 @@ function isGiftCard(item) {
 }
 
 function isTuBeAvPackage(item) {
-    return item && (item.productId === '7dc582de-5eef-b777-a9fb-a8109ace1fa1');
+    // return item && (item.productId === '7dc582de-5eef-b777-a9fb-a8109ace1fa1');
+    return item && (item.productId === '9a9a33b9-f622-1148-489c-a42f85c85312');
 }
 
 const DISCOUNT_SKU = "59998";
@@ -155,14 +156,24 @@ function getPrice(itemName, prodVars, sku){
 }
 
 function handleTuBeAvPackage(item, duedate) {
+    // const possibleOptions = {
+    //     "50830": 57.75,
+    //     "50001": 76.23,
+    //     "50823": 76.23,
+    //     "50462": 130.9,
+    //     "97151": 92.4,
+    //     "97152": 92.4,
+    //     "59995": 21.56
+    // };
     const possibleOptions = {
-        "50830": 57.75,
-        "50001": 76.23,
-        "50823": 76.23,
-        "50462": 130.9,
-        "97151": 92.4,
-        "97152": 92.4,
-        "59995": 21.56
+        "93111": 144.0,
+        "93112": 144.0,
+        "93113": 144.0,
+        "93114": 144.0,
+        "93115": 144.0,
+        "95300": 126.0,
+        "97151": 108.0,
+        "97152": 108.0
     };
     let skuArr = item.sku.split(',');
     skuArr = skuArr.map(sku => sku.trim());
